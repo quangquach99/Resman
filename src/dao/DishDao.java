@@ -19,31 +19,31 @@ public class DishDao extends Dao {
 	public DishDao() {}
 	
 	// GET dish by Id
-		public Dish getDishById(int dishById) {
-			Dish dish = null;
-			
-			try (Connection connection = getConnection();
-	    		// Query
-	    		PreparedStatement preparedStatement = connection.prepareStatement(GET_DISH_BY_ID);) {
-				preparedStatement.setInt(1, dishById);
-	    		System.out.println(preparedStatement);
-	    		//Execute the query
-	    		ResultSet rs = preparedStatement.executeQuery();
-	    		// Process Result
-	    		while(rs.next()) {
-	    			int dishId = Integer.parseInt(rs.getString("dish_id"));
-	    			String dishName = rs.getString("dish_name");
-	    			String dishImage = rs.getString("dish_image");
-	    			int dishType = Integer.parseInt(rs.getString("dish_type"));
-	    			float dishPrice = Float.parseFloat(rs.getString("dish_price"));
-	    			dish = new Dish(dishId, dishName, dishImage, dishType, dishPrice);
-	    		}
-	    	} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    	return dish;
+	public Dish getDishById(int dishById) {
+		Dish dish = null;
+		
+		try (Connection connection = getConnection();
+    		// Query
+    		PreparedStatement preparedStatement = connection.prepareStatement(GET_DISH_BY_ID);) {
+			preparedStatement.setInt(1, dishById);
+    		System.out.println(preparedStatement);
+    		//Execute the query
+    		ResultSet rs = preparedStatement.executeQuery();
+    		// Process Result
+    		while(rs.next()) {
+    			int dishId = Integer.parseInt(rs.getString("dish_id"));
+    			String dishName = rs.getString("dish_name");
+    			String dishImage = rs.getString("dish_image");
+    			int dishType = Integer.parseInt(rs.getString("dish_type"));
+    			float dishPrice = Float.parseFloat(rs.getString("dish_price"));
+    			dish = new Dish(dishId, dishName, dishImage, dishType, dishPrice);
+    		}
+    	} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+    	return dish;
+	}
 	
 	// GET all dishes
 	public List<Dish> getAllDish() {

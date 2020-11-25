@@ -78,11 +78,11 @@ public class Admin extends HttpServlet {
 			} else {
 				String[] availableControllers = {"AddDishToOrder","ConfirmOrder","DishSearch","GetReservations","Home","ReservationConfirm","ReservationSearch","SaveReservation","SetSessionReservation"};
 				if(!Arrays.asList(availableControllers).contains(uris[2])) {
-					response.sendRedirect("http://localhost/Resman/NotFound");
+					response.sendRedirect("https://localhost/Resman/NotFound");
 				}
 			}
 		} else {
-			response.sendRedirect("http://localhost/Resman/Home");
+			response.sendRedirect("https://localhost/Resman/Home");
 		}
 	}
 
@@ -108,20 +108,20 @@ public class Admin extends HttpServlet {
 				System.out.println(manager.getUserPassword());
 				System.out.println(crypt.caesarCipherEncrypt(userPassword));
 				if(!manager.getUserPassword().equals(crypt.caesarCipherEncrypt(userPassword))) {
-					response.sendRedirect("http://localhost/Resman/Admin?error=0006&userEmail="+userEmail);
+					response.sendRedirect("https://localhost/Resman/Admin?error=0006&userEmail="+userEmail);
 				} else {
 					String managerFullname = manager.getUserFullName();
 					HttpSession session = request.getSession();
 					session.setAttribute("authenticated", true);
 					session.setAttribute("managerFullname", managerFullname);
-					response.sendRedirect("http://localhost/Resman/Admin?success=0003");
+					response.sendRedirect("https://localhost/Resman/Admin?success=0003");
 				}
 			} else {
-				response.sendRedirect("http://localhost/Resman/Admin?error=0007&userEmail="+userEmail);
+				response.sendRedirect("https://localhost/Resman/Admin?error=0007&userEmail="+userEmail);
 			}
 			
 		} else {
-			response.sendRedirect("http://localhost/Resman/Admin?error=0006&userEmail="+userEmail);
+			response.sendRedirect("https://localhost/Resman/Admin?error=0006&userEmail="+userEmail);
 		}
 	}
 
@@ -134,7 +134,7 @@ public class Admin extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("authenticated");
 		session.removeAttribute("managerFullname");
-		response.sendRedirect("http://localhost/Resman/Admin");
+		response.sendRedirect("https://localhost/Resman/Admin");
 	}
 	
 	private void revenueByDish(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

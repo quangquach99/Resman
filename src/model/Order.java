@@ -15,7 +15,6 @@ public class Order {
 	
 	public Order() {}
 	
-	
 	public Order(int reservationId, int dishId, int dishQuantity, float dishPrice) {
 		super();
 		this.reservationId = reservationId;

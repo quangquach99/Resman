@@ -1,6 +1,6 @@
 <!-- Left Navigation Bar -->
 <div id="navBar">
-	<a href="http://localhost/Resman/Admin"><i class="mr-7 fas fa-tachometer-alt"></i>Dashboard</a>
+	<a href="https://localhost/Resman/Admin"><i class="mr-7 fas fa-tachometer-alt"></i>Dashboard</a>
 	<a href="#">Something</a>
 	<a href="#">Something</a>
 	<div class="dropdown-btn">

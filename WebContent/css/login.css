@@ -170,3 +170,11 @@
 #anotherErrorMessage {
 	color: tomato;
 }
+/* Remember Login */
+#remember {
+	width: 14px;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	display: inline-block;
+}

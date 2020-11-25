@@ -42,8 +42,8 @@ public class ConfirmOrder extends HttpServlet {
 				int reservationId = orders.get(i).getReservationId();
 				int dishId = orders.get(i).getDishId();
 				int dishQuantity = orders.get(i).getDishQuantity();
-				float orderPrice = orders.get(i).getOrderPrice();
-				Order order = new Order(reservationId, dishId, dishQuantity, orderPrice);
+				float dishPrice = orders.get(i).getDishPrice();
+				Order order = new Order(reservationId, dishId, dishQuantity, dishPrice);
 				orderDao.insertNewOrder(order);
 				System.out.println("-----");
 	            System.out.println(orders.get(i).getDishId());
